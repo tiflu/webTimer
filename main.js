@@ -3,6 +3,7 @@ let timerIncrementTime = 0;
 let timer;
 let timerActive = false;
 let timerPaused = false;
+let displayMs = true;
 
 window.addEventListener("load", () => {
     const dropdown = document.querySelector("#dropdown");
@@ -15,8 +16,16 @@ window.addEventListener("load", () => {
         } else {
             decrementalOptions.classList.remove("hidden");
         }
-    })
-})
+    });
+
+    const checkbox = document.querySelector("#msCheckbox");
+    checkbox.addEventListener("click", () => {
+        displayMs = checkbox.checked;
+        if (!timerActive) {
+            setTimerText(0);
+        }
+    });
+});
 
 function setDecrementTime(ms) {
     if (timerActive) {
@@ -72,7 +81,7 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(timer);
-    document.querySelector("#timerText").innerText = "00:00:00.000";
+    setTimerText(0);
     timerActive = false;
     timerPaused = false;
     timerIncrementTime = 0;
@@ -99,9 +108,16 @@ function setTimerText(ms) {
     const textElement = document.querySelector("#timerText");
     const time = getTime(ms);
 
-    textElement.innerText =
-        `${time.get("hours").toString().padStart(2, "0")}:` +
-        `${time.get("minutes").toString().padStart(2, "0")}:` +
-        `${time.get("seconds").toString().padStart(2, "0")}.` +
-        `${time.get("ms").toString().padStart(3, "0")}`;
+    if (displayMs) {
+        textElement.innerText =
+            `${time.get("hours").toString().padStart(2, "0")}:` +
+            `${time.get("minutes").toString().padStart(2, "0")}:` +
+            `${time.get("seconds").toString().padStart(2, "0")}.` +
+            `${time.get("ms").toString().padStart(3, "0")}`;
+    } else {
+        textElement.innerText =
+            `${time.get("hours").toString().padStart(2, "0")}:` +
+            `${time.get("minutes").toString().padStart(2, "0")}:` +
+            `${time.get("seconds").toString().padStart(2, "0")}`;
+    }
 }
