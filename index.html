@@ -7,9 +7,25 @@
     <title>Timer</title>
 </head>
 <body>
-    <div id="timer">
-        <h1 id="timerText">00:00:00.000</h1>
-    </div>
+    <h1 id="timerText">00:00:00.000</h1>
+    <label for="dropdown">Choose type:</label>
+    <select id="dropdown">
+        <option value="incremental">Incremental</option>
+        <option value="decremental">Decremental</option>
+    </select>
+
     <button id="start" onclick="timer(10000)">Start</button>
+
+    <div id="decrementalOptions" class="hidden">
+        <div id="quickOptions">
+            <h3>Quick Set</h3>
+            <button id="30s">30s</button>
+            <button id="1m">1m</button>
+            <button id="5m">5m</button>
+            <button id="10m">10m</button>
+            <button id="30m">30m</button>
+            <button id="1h">1h</button>
+        </div>
+    </div>
 </body>
 </html>

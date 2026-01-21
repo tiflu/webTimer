@@ -1,3 +1,15 @@
+window.addEventListener("load", () => {
+    const dropdown = document.querySelector("#dropdown");
+    dropdown.addEventListener("change",() => {
+        const decrementalOptions = document.querySelector("#decrementalOptions");
+        if (dropdown.value === "incremental") {
+            decrementalOptions.classList.add("hidden");
+        } else {
+            decrementalOptions.classList.remove("hidden");
+        }
+    })
+})
+
 function timer(ms) {
     const textElement = document.querySelector("#timerText");
     const startTime = Date.now();
@@ -17,6 +29,6 @@ function timer(ms) {
             textElement.innerText = "00:00:00.000";
             return;
         }
-        textElement.innerText = `${currentHours}:${currentMinutes}:${currentSeconds}:${currentMs}`;
+        textElement.innerText = `${currentHours.toString().padStart(2, "0")}:${currentMinutes.toString().padStart(2, "0")}:${currentSeconds.toString().padStart(2, "0")}.${currentMs.toString().padStart(3, "0")}`;
     }, 1000/60)
 }

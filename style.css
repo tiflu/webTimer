@@ -1,7 +1,11 @@
-body {
+/*body {
     color: transparent;
 }
 
 #timer {
     color: black;
+}*/
+
+.hidden {
+    display: none;
 }
