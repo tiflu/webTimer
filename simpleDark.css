@@ -1,0 +1,10 @@
+#timer {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    width: fit-content;
+}
+
+#timerText {
+    font-family: "DejaVu Sans", sans-serif;
+}

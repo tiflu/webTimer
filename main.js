@@ -4,7 +4,7 @@ let timer;
 let timerActive = false;
 let timerPaused = false;
 let displayMs = true;
-let controller;
+let controller = new AbortController();
 
 window.addEventListener("load", () => {
     const dropdown = document.querySelector("#dropdown");
@@ -26,6 +26,19 @@ window.addEventListener("load", () => {
             setTimerText(0);
         }
     });
+
+    const themeDropdown = document.querySelector("#theme");
+    const themeStylesheet = document.querySelector("#themeSheet");
+    themeDropdown.addEventListener("change", () => {
+        switch (themeDropdown.value) {
+            case "light":
+                themeStylesheet.href = "simpleLight.css";
+                break;
+            case "dark":
+                themeStylesheet.href = "simpleDark.css";
+                break;
+        }
+    })
 
     addInputListeners();
 });

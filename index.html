@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link id="themeSheet" rel="stylesheet" href="simpleLight.css">
     <script src="main.js"></script>
     <title>Timer</title>
 </head>
 <body>
 
-    <h1 id="timerText">00:00:00.000</h1>
+    <div id="timer">
+        <h1 id="timerText">00:00:00.000</h1>
+    </div>
+    <br>
 
     <button id="start" onclick="startTimer()">Start</button>
     <button id="pause">Pause</button>
@@ -22,12 +26,19 @@
     <input id="audioCheckbox" type="checkbox" checked>
     <br><br>
 
+    <label for="dropdown">Theme:</label>
+    <select id="theme">
+        <option value="light">Simple Light</option>
+        <option value="dark">Simple Dark</option>
+    </select>
+    <br><br>
+
+
     <label for="dropdown">Choose type:</label>
     <select id="dropdown">
         <option value="incremental">Incremental</option>
         <option value="decremental">Decremental</option>
     </select>
-
     <div id="decrementalOptions" class="hidden">
         <div id="quickOptions">
             <h3>Quick Set</h3>
@@ -54,6 +65,9 @@
     </div>
     <br><br><br>
 
-    <a href="https://freesound.org/people/kwahmah_02/sounds/250629/">Alarm Sound</a> by <a href="https://freesound.org/people/kwahmah_02/">kwahmah_02</a> | License: <a href="http://creativecommons.org/licenses/by/3.0/">Attribution 3.0</a>
+    <div id="attributions">
+        <a href="https://freesound.org/people/kwahmah_02/sounds/250629/">Alarm Sound</a> by
+        <a href="https://freesound.org/people/kwahmah_02/">kwahmah_02</a> | License: <a href="http://creativecommons.org/licenses/by/3.0/">Attribution 3.0</a>
+    </div>
 </body>
 </html>

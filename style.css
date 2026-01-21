@@ -1,15 +1,12 @@
-/*body {
-    color: transparent;
-}
-
-#timer {
-    color: black;
-}*/
-
 .hidden {
     display: none;
 }
 
 .redBorder {
     border-color: red;
+}
+
+#attributions {
+    position: absolute;
+    bottom: 0;
 }
