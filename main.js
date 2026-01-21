@@ -1,12 +1,16 @@
 let timerDecrementTime = 0;
+let timerIncrementTime = 0;
 let timer;
 let timerActive = false;
+let timerPaused = false;
 
 window.addEventListener("load", () => {
     const dropdown = document.querySelector("#dropdown");
+    dropdown.value = "incremental";
     dropdown.addEventListener("change",() => {
         const decrementalOptions = document.querySelector("#decrementalOptions");
-        if (dropdown.value === "incremental") {
+        stopTimer();
+        if (incrementalTimer()) {
             decrementalOptions.classList.add("hidden");
         } else {
             decrementalOptions.classList.remove("hidden");
@@ -23,13 +27,24 @@ function setDecrementTime(ms) {
 }
 
 function startTimer() {
+    if (timerActive && !timerPaused) {
+        return;
+    }
     timerActive = true;
-    const startTime = Date.now();
+    timerPaused = false;
+    const startTime = Date.now() - timerIncrementTime;
+    const pauseButton = document.querySelector("#pause");
 
-    if (document.querySelector("#dropdown").value === "incremental") {
+    if (incrementalTimer()) {
         timer = setInterval(() => {
             setTimerText(Date.now() - startTime);
         }, 1000/60)
+
+        pauseButton.addEventListener("click", () => {
+            timerPaused = true;
+            timerIncrementTime = Date.now() - startTime;
+            clearInterval(timer);
+        }, {once: true});
 
     } else {
         let ms = timerDecrementTime;
@@ -45,7 +60,13 @@ function startTimer() {
 
             setTimerText(ms);
 
-        }, 1000 / 60)
+        }, 1000 / 60);
+
+        pauseButton.addEventListener("click", () => {
+            timerPaused = true;
+            timerDecrementTime = ms;
+            clearInterval(timer);
+        }, {once: true})
     }
 }
 
@@ -53,6 +74,13 @@ function stopTimer() {
     clearInterval(timer);
     document.querySelector("#timerText").innerText = "00:00:00.000";
     timerActive = false;
+    timerPaused = false;
+    timerIncrementTime = 0;
+    timerDecrementTime = 0;
+}
+
+function incrementalTimer() {
+    return document.querySelector("#dropdown").value === "incremental";
 }
 
 function getTime(ms) {
