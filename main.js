@@ -37,6 +37,9 @@ window.addEventListener("load", () => {
             case "dark":
                 themeStylesheet.href = "simpleDark.css";
                 break;
+            case "green":
+                themeStylesheet.href = "greenscreen.css";
+                break;
         }
     })
 
