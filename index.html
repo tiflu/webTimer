@@ -1,75 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link id="themeSheet" rel="stylesheet" href="simpleLight.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link id="themeSheet" rel="stylesheet" href="simpleLight.css" />
+    <link id="themeSheet" rel="stylesheet" href="simpleRed.css" />
     <script src="main.js"></script>
     <title>Timer</title>
-    <link rel="icon" href="clock.svg">
-</head>
-<body>
-
+    <link rel="icon" href="clock.svg" />
+  </head>
+  <body>
     <div id="timer">
-        <h1 id="timerText">00:00:00.000</h1>
+      <h1 id="timerText">00:00:00.000</h1>
     </div>
-    <br>
+    <br />
 
     <button id="start" onclick="startTimer()">Start</button>
     <button id="pause">Pause</button>
     <button id="stop" onclick="stopTimer()">Stop</button>
-    <br><br>
+    <br /><br />
 
     <label for="msCheckbox">Display milliseconds?</label>
-    <input id="msCheckbox" type="checkbox" checked>
-    <br><br>
+    <input id="msCheckbox" type="checkbox" checked />
+    <br /><br />
     <label for="audioCheckbox">Play alarm sound?</label>
-    <input id="audioCheckbox" type="checkbox" checked>
-    <br><br>
+    <input id="audioCheckbox" type="checkbox" checked />
+    <br /><br />
 
     <label for="theme">Theme:</label>
     <select id="theme">
-        <option value="light">Simple Light</option>
-        <option value="dark">Simple Dark</option>
-        <option value="green">Greenscreen</option>
+      <option value="red">Simple Red</option>
+      <option value="light">Simple Light</option>
+      <option value="dark">Simple Dark</option>
+      <option value="green">Greenscreen</option>
     </select>
-    <br><br>
-
+    <br /><br />
 
     <label for="dropdown">Choose type:</label>
     <select id="dropdown">
-        <option value="incremental">Incremental</option>
-        <option value="decremental">Decremental</option>
+      <option value="incremental">Incremental</option>
+      <option value="decremental">Decremental</option>
     </select>
     <div id="decrementalOptions" class="hidden">
-        <div id="quickOptions">
-            <h3>Quick Set</h3>
-            <button id="30s" onclick="setDecrementTime(30000)">30s</button>
-            <button id="1m" onclick="setDecrementTime(60000)">1m</button>
-            <button id="5m" onclick="setDecrementTime(300000)">5m</button>
-            <button id="10m" onclick="setDecrementTime(600000)">10m</button>
-            <button id="30m" onclick="setDecrementTime(1800000)">30m</button>
-            <button id="1h" onclick="setDecrementTime(3600000)">1h</button>
-        </div>
-        <br>
-        <div id="setTime">
-            <h3>Manual Set</h3>
-            <input type="number" id="hourInput" min="0" max="999" value="0">
-            <label for="hourInput">hr</label>
-            <input type="number" id="minuteInput" min="0" max="59" value="0">
-            <label for="minuteInput">min</label>
-            <input type="number" id="secondInput" min="0" max="59" value="0">
-            <label for="secondInput">sec</label>
-            <input type="number" id="msInput" min="0" max="999" value="0">
-            <label for="msInput">ms</label>
-            <button onclick="manualTimeSubmit()">Go!</button>
-        </div>
+      <div id="quickOptions">
+        <h3>Quick Set</h3>
+        <button id="30s" onclick="setDecrementTime(30000)">30s</button>
+        <button id="1m" onclick="setDecrementTime(60000)">1m</button>
+        <button id="5m" onclick="setDecrementTime(300000)">5m</button>
+        <button id="10m" onclick="setDecrementTime(600000)">10m</button>
+        <button id="30m" onclick="setDecrementTime(1800000)">30m</button>
+        <button id="1h" onclick="setDecrementTime(3600000)">1h</button>
+      </div>
+      <br />
+      <div id="setTime">
+        <h3>Manual Set</h3>
+        <input type="number" id="hourInput" min="0" max="999" value="0" />
+        <label for="hourInput">hr</label>
+        <input type="number" id="minuteInput" min="0" max="59" value="0" />
+        <label for="minuteInput">min</label>
+        <input type="number" id="secondInput" min="0" max="59" value="0" />
+        <label for="secondInput">sec</label>
+        <input type="number" id="msInput" min="0" max="999" value="0" />
+        <label for="msInput">ms</label>
+        <button onclick="manualTimeSubmit()">Go!</button>
+      </div>
     </div>
-    <br><br><br>
+    <br /><br /><br />
 
     <div id="attributions">
-        <a href="https://freesound.org/people/kwahmah_02/sounds/250629/">Alarm Sound</a> by
-        <a href="https://freesound.org/people/kwahmah_02/">kwahmah_02</a> | License: <a href="https://creativecommons.org/licenses/by/3.0/">Attribution 3.0</a>
+      <a href="https://freesound.org/people/kwahmah_02/sounds/250629/"
+        >Alarm Sound</a
+      >
+      by <a href="https://freesound.org/people/kwahmah_02/">kwahmah_02</a> |
+      License:
+      <a href="https://creativecommons.org/licenses/by/3.0/">Attribution 3.0</a>
     </div>
-</body>
+  </body>
 </html>
