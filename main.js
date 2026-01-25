@@ -48,6 +48,9 @@ function setStyle() {
         case "green":
             themeStylesheet.href = "greenscreen.css";
             break;
+        case "purple":
+            themeStylesheet.href = "purpleGradient.css";
+            break;
     }
 }
 

@@ -1,0 +1,10 @@
+#timer {
+    background-image: linear-gradient(to bottom right, #7017a1, #70a1d2);
+    color: white;
+    padding: 1rem;
+    width: fit-content;
+}
+
+#timerText {
+    font-family: "DejaVu Sans", sans-serif;
+}
