@@ -10,3 +10,7 @@
     position: absolute;
     bottom: 0;
 }
+
+.fun {
+    background-image: repeating-linear-gradient(red, orange, yellow, green, blue, purple 10%);
+}

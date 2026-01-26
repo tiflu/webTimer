@@ -29,6 +29,15 @@ window.addEventListener("load", () => {
 
     const themeDropdown = document.querySelector("#theme");
     themeDropdown.addEventListener("change", setStyle);
+
+    const funCheckbox = document.querySelector("#funCheckbox");
+    funCheckbox.addEventListener("change", () => {
+        if (funCheckbox.checked) {
+            document.body.classList.add('fun');
+        } else {
+            document.body.classList.remove('fun');
+        }
+    })
     setStyle();
 
     addInputListeners();
