@@ -17,14 +17,11 @@
 
     <button id="start" onclick="startTimer()">Start</button>
     <button id="pause">Pause</button>
-    <button id="stop" onclick="stopTimer()">Stop</button>
+    <button id="reset" onclick="stopTimer()">Reset</button>
     <br><br>
 
     <label for="msCheckbox">Display milliseconds?</label>
     <input id="msCheckbox" type="checkbox" checked>
-    <br><br>
-    <label for="audioCheckbox">Play alarm sound?</label>
-    <input id="audioCheckbox" type="checkbox" checked>
     <br><br>
     <label for="funCheckbox">Fun mode?</label>
     <input id="funCheckbox" type="checkbox">
@@ -67,6 +64,12 @@
             <input type="number" id="msInput" min="0" max="999" value="0">
             <label for="msInput">ms</label>
             <button onclick="manualTimeSubmit()">Go!</button>
+        </div>
+        <br>
+        <div id="audioOptions">
+            <h3>Audio</h3>
+            <label for="audioCheckbox">Play alarm sound?</label>
+            <input id="audioCheckbox" type="checkbox" checked>
         </div>
     </div>
     <br><br><br>
